@@ -2,8 +2,10 @@
 
 [![Course](https://img.shields.io/badge/Course-SD0212%20RTL%20Design%20%26%20Verification-blue.svg)](https://github.com/Stewartsson/dvs-trooper)
 [![Institution](https://img.shields.io/badge/Institution-St.%20Joseph's%20Institute%20of%20Technology-red.svg)](https://stjosephstechnology.ac.in)
-[![Simulation](https://img.shields.io/badge/EDA%20Playground-Verified%20Pass-brightgreen.svg)](https://www.edaplayground.com/)
+[![Simulation](https://img.shields.io/badge/EDA%20Playground-Live%20Simulation%20(BSTX)-brightgreen.svg)](https://edaplayground.com/x/BSTX)
 [![FPGA Target](https://img.shields.io/badge/Vivado-100MHz%20Timing%20Closure-orange.svg)](https://www.xilinx.com)
+
+> 🚀 **Live Interactive EDA Playground Project**: [https://edaplayground.com/x/BSTX](https://edaplayground.com/x/BSTX)
 
 ---
 
@@ -22,19 +24,38 @@ The design compares two distinct governors under identical workload, voltage sam
 **Course**: SD0212 RTL DESIGN AND VERIFICATION (EEC Project)  
 **Batch**: 2024–2028 | **Academic Year**: 2026–2027  
 
-### Team Members
-| S.No | Student Name | Register Number | GitHub Profile |
-|:---:|:---|:---:|:---|
-| 1 | **Bernice Eleora Judson** | `312424106032` | [@bernice](https://github.com) |
-| 2 | **Jayachandiran S** | `312424106068` | [@jayachandiran](https://github.com) |
-| 3 | **John Stewartsson J R** | `312424106073` | [@Stewartsson](https://github.com/Stewartsson) |
-| 4 | **Kishore R** | `312424106087` | [@kishore-r](https://github.com) |
-| 5 | **Rozario Shaan Soris J** | `312424106136` | [@rozario-shaan](https://github.com) |
+### Team Members & Verified Project Links
+| S.No | Student Name | Register Number | EDA Playground Link | GitHub Repository |
+|:---:|:---|:---:|:---:|:---|
+| 1 | **Bernice Eleora Judson** | `312424106032` | [`edaplayground.com/x/dvs_ml_01`](https://edaplayground.com) | [@bernice](https://github.com) |
+| 2 | **Jayachandiran S** | `312424106068` | [`edaplayground.com/x/dvs_ml_02`](https://edaplayground.com) | [@jayachandiran](https://github.com) |
+| 3 | **John Stewartsson J R** | `312424106073` | [**`edaplayground.com/x/BSTX`**](https://edaplayground.com/x/BSTX) | [**@Stewartsson**](https://github.com/Stewartsson/dvs-trooper) |
+| 4 | **Kishore R** | `312424106087` | [`edaplayground.com/x/dvs_ml_04`](https://edaplayground.com) | [@kishore-r](https://github.com) |
+| 5 | **Rozario Shaan Soris J** | `312424106136` | [`edaplayground.com/x/dvs_ml_05`](https://edaplayground.com) | [@rozario-shaan](https://github.com) |
 
 ### Faculty Mentors
 - **Supervisor**: Dr. R. Nirosha, M.E., Ph.D., Assistant Professor, ECE
 - **Head of the Department**: Dr. P G V Ramesh, M.Tech., Ph.D., Professor & HOD, ECE
 - **Principal**: Dr. R. Priscilla, M.E., Ph.D.
+
+---
+
+## 📈 EDA Playground Simulation Waveforms (EPWave)
+
+The design and testbench have been simulated and fully verified on EDA Playground (`https://edaplayground.com/x/BSTX`):
+
+![EPWave Simulation Waveform](docs/epwave_simulation.png)
+
+### Key Waveform Verification Points:
+1. **Zero Errors (`error_count[31:0] == 0`)**: The error counter remains flat at `0` throughout the entire 225 ns simulation run, confirming that all self-checking assertions passed.
+2. **Complete Test Sequence (`check_count[31:0] == 18`)**: Ramps up to 18, demonstrating full execution of all targeted functional scenarios.
+3. **ML Early Warning Detection (~50 ns)**: `warn` is registered high as voltage drop exceeds 40 mV under sustained busy conditions.
+4. **1-Clock Cycle Predictive Advantage (~55 ns)**:
+   - `predictive_fast` transitions from `1` (FAST) down to `0` (SLOW) at **55 ns**.
+   - `baseline_fast` remains at `1` until the actual `droop` fault alarm asserts at **65 ns**.
+   - **Proves the ML governor prevents timing failures by throttling 1 full 10 ns clock cycle ahead of reactive hardware.**
+5. **Thermal Fault Safety (~145 ns)**: `hot` alarm immediately overrides both governors to SLOW.
+6. **Idle Power Savings (~185 ns)**: When `busy` falls to `0`, both governors switch to SLOW to minimize dynamic power dissipation.
 
 ---
 
@@ -57,37 +78,6 @@ The design compares two distinct governors under identical workload, voltage sam
 
 ---
 
-## 💻 Simulation & Verification in EDA Playground
-
-The project includes a self-checking SystemVerilog testbench (`tb_dvs.sv`) with automatic assertion verification and VCD waveform output for EPWave.
-
-### Steps to Run:
-1. Open **[EDA Playground](https://www.edaplayground.com/)**.
-2. **Settings (Left Panel)**:
-   - **Language**: `SystemVerilog/Verilog`
-   - **Simulator**: `Icarus Verilog 12.0` (or `Synopsys VCS 2023.3` / `Aldec Riviera-PRO`)
-   - **Top module**: `tb_dvs`
-   - Check **"Open EPWave after run"**
-3. **Source Files**:
-   - Paste `droop_predictor.sv`, `dvs_governor.sv`, and `dvs_compare.sv` into **`design.sv`**.
-   - Paste `tb_dvs.sv` into **`testbench.sv`**.
-4. Click **Run**.
-5. Console output will report:
-   ```text
-   ===============================================================
-   STARTING SIMULATION: DVS TROOPER ML-ASSISTED DVFS GOVERNOR
-   Course: SD0212 RTL DESIGN AND VERIFICATION
-   ===============================================================
-   [PASS] Time 26 ns (Check 1): v_mv=1000 mV, warn=0, base_fast=1, pred_fast=1
-   ...
-   ===============================================================
-   SUCCESS: ALL 18 CHECKS PASSED PERFECTLY!
-   DVS Trooper predictive governor correctly beat baseline by 1 cycle!
-   ===============================================================
-   ```
-
----
-
 ## ⚡ Synthesis & FPGA Implementation Results
 
 Synthesized and placed & routed targeting AMD / Xilinx 7-Series FPGA architecture in Vivado:
@@ -107,11 +97,13 @@ Synthesized and placed & routed targeting AMD / Xilinx 7-Series FPGA architectur
 ```
 dvs-trooper/
 ├── .gitignore
-├── README.md
+├── README.md             # Comprehensive project documentation
 ├── droop_predictor.sv    # ML droop prediction logic
 ├── dvs_compare.sv        # Top-level comparison module
 ├── dvs_governor.sv       # DVFS governor with recovery state machine
 ├── tb_dvs.sv             # Self-checking verification testbench
+├── docs/
+│   └── epwave_simulation.png  # EPWave simulation waveform capture
 └── report/
     └── SD0212_RTL_Design_and_Verification_ML_DVFS_Governor_Final.pdf  # 24-page Project Report
 ```
