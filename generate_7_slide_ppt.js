@@ -551,7 +551,7 @@ function addSlideChrome(slide, slideNumber, categoryTag, slideTitle) {
       { text: "Bernice Eleora Judson", options: { bold: true, fontSize: 7.5, color: TEXT_DARK } },
       { text: "312424106032", options: { fontSize: 7.5, color: TEXT_MUTED } },
       { text: "RTL Module Design & Architecture", options: { fontSize: 7.5, color: TEXT_DARK } },
-      { text: "https://edaplayground.com/x/BSTX", options: { fontSize: 7.5, color: BLUE_ACCENT } },
+      { text: "https://edaplayground.com/x/WzeJ", options: { fontSize: 7.5, color: BLUE_ACCENT } },
       { text: "https://github.com/Stewartsson/dvs-trooper", options: { fontSize: 7.5, color: BLUE_ACCENT } }
     ],
     [
@@ -559,7 +559,7 @@ function addSlideChrome(slide, slideNumber, categoryTag, slideTitle) {
       { text: "Jayachandiran S", options: { bold: true, fontSize: 7.5, color: TEXT_DARK } },
       { text: "312424106068", options: { fontSize: 7.5, color: TEXT_MUTED } },
       { text: "Testbench Stimuli & Verification", options: { fontSize: 7.5, color: TEXT_DARK } },
-      { text: "https://edaplayground.com/x/BSTX", options: { fontSize: 7.5, color: BLUE_ACCENT } },
+      { text: "https://edaplayground.com/x/Q8kb", options: { fontSize: 7.5, color: BLUE_ACCENT } },
       { text: "https://github.com/Stewartsson/dvs-trooper", options: { fontSize: 7.5, color: BLUE_ACCENT } }
     ],
     [
@@ -575,7 +575,7 @@ function addSlideChrome(slide, slideNumber, categoryTag, slideTitle) {
       { text: "Kishore R", options: { bold: true, fontSize: 7.5, color: TEXT_DARK } },
       { text: "312424106087", options: { fontSize: 7.5, color: TEXT_MUTED } },
       { text: "EPWave Waveform Trace Analysis", options: { fontSize: 7.5, color: TEXT_DARK } },
-      { text: "https://edaplayground.com/x/BSTX", options: { fontSize: 7.5, color: BLUE_ACCENT } },
+      { text: "https://edaplayground.com/x/DLBt", options: { fontSize: 7.5, color: BLUE_ACCENT } },
       { text: "https://github.com/Stewartsson/dvs-trooper", options: { fontSize: 7.5, color: BLUE_ACCENT } }
     ],
     [
@@ -583,7 +583,7 @@ function addSlideChrome(slide, slideNumber, categoryTag, slideTitle) {
       { text: "Rozario Shaan Soris J", options: { bold: true, fontSize: 7.5, color: TEXT_DARK } },
       { text: "312424106136", options: { fontSize: 7.5, color: TEXT_MUTED } },
       { text: "Vivado FPGA Synthesis & Timing", options: { fontSize: 7.5, color: TEXT_DARK } },
-      { text: "https://edaplayground.com/x/BSTX", options: { fontSize: 7.5, color: BLUE_ACCENT } },
+      { text: "https://edaplayground.com/x/cwDY", options: { fontSize: 7.5, color: BLUE_ACCENT } },
       { text: "https://github.com/Stewartsson/dvs-trooper", options: { fontSize: 7.5, color: BLUE_ACCENT } }
     ]
   ];
