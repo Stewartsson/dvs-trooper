@@ -9,7 +9,7 @@
 
 module tb_dvs;
 
-  logic        clk;
+  logic        clk = 0;
   logic        rst_n;
   logic        busy;
   logic        hot;
