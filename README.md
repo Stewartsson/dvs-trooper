@@ -27,11 +27,11 @@ The design compares two distinct governors under identical workload, voltage sam
 ### Team Members & Verified Project Links
 | S.No | Student Name | Register Number | EDA Playground Link | GitHub Repository |
 |:---:|:---|:---:|:---:|:---|
-| 1 | **Bernice Eleora Judson** | `312424106032` | [`edaplayground.com/x/dvs_ml_01`](https://edaplayground.com) | [@bernice](https://github.com) |
-| 2 | **Jayachandiran S** | `312424106068` | [`edaplayground.com/x/dvs_ml_02`](https://edaplayground.com) | [@jayachandiran](https://github.com) |
+| 1 | **Bernice Eleora Judson** | `312424106032` | [`edaplayground.com/x/WzeJ`](https://edaplayground.com/x/WzeJ) | [@bernice](https://github.com) |
+| 2 | **Jayachandiran S** | `312424106068` | [`edaplayground.com/x/Q8kb`](https://edaplayground.com/x/Q8kb) | [@jayachandiran](https://github.com) |
 | 3 | **John Stewartsson J R** | `312424106073` | [**`edaplayground.com/x/BSTX`**](https://edaplayground.com/x/BSTX) | [**@Stewartsson**](https://github.com/Stewartsson/dvs-trooper) |
-| 4 | **Kishore R** | `312424106087` | [`edaplayground.com/x/dvs_ml_04`](https://edaplayground.com) | [@kishore-r](https://github.com) |
-| 5 | **Rozario Shaan Soris J** | `312424106136` | [`edaplayground.com/x/dvs_ml_05`](https://edaplayground.com) | [@rozario-shaan](https://github.com) |
+| 4 | **Kishore R** | `312424106087` | [`edaplayground.com/x/DLBt`](https://edaplayground.com/x/DLBt) | [@kishore-r](https://github.com) |
+| 5 | **Rozario Shaan Soris J** | `312424106136` | [`edaplayground.com/x/cwDY`](https://edaplayground.com/x/cwDY) | [@rozario-shaan](https://github.com) |
 
 ### Faculty Mentors
 - **Supervisor**: Dr. R. Nirosha, M.E., Ph.D., Assistant Professor, ECE
